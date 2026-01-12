@@ -5,7 +5,11 @@
     <title>College Transport Management System</title>
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <script>window.location.href = "login.html";</script>
+    <script>
+  if (document.referrer.indexOf("login.html") == -1) {
+      window.location.href = "login.html";
+  }
+</script>
 </head>
 <body>
 
