@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - CTMS</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <style>
+        /* This makes the background dynamic/blurry */
+        body {
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .login-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+        body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #4b0082, #800080, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px); /* This gives a modern frosted glass look */
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4 login-box">
+                <h3 class="text-center">CTMS Login</h3>
+                <form action="index.html">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="username" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                       <input type="password" id="password" class="form-control" required>
+                    </div>
+                    <button type="button" class="btn btn-login btn-block" onclick="checkLogin()">LOGIN</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.2.4.min.js"></script>
+<script>
+function checkLogin() {
+    // 1. Get the values from the input boxes
+    // Make sure your input tags have id="username" and id="password"
+    var user = document.getElementById("username").value;
+    var pass = document.getElementById("password").value;
+
+    // 2. The Logic: Redirect based on the username
+    if (user === "admin" && pass === "admin123") {
+        // If they type 'admin', take them to the Management Dashboard
+        window.location.href = "admin.html";
+    } 
+    else if (user !== "" && pass !== "") {
+        // If they type anything else, they are a 'Student'
+        window.location.href = "index.html";
+    } 
+    else {
+        alert("Please enter both Username and Password");
+    }
+}
+</script>
+</body>
+</html>

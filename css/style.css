@@ -1,0 +1,45 @@
+@charset "UTF-8";
+/* Custom Styles for CTMS */
+.hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../screenshots/bus-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-bus-details {
+    background-color: #4B0082; /* Deep Indigo/Purple per your PDF screenshot [cite: 314] */
+    color: white;
+    padding: 15px 40px;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-bus-details:hover {
+    background-color: #310062;
+    color: #f1f1f1;
+    text-decoration: none;
+}
+.hero-section {
+    background: linear-gradient(-45deg, #4b0082, #000080, #4b0082);
+    background-size: 400% 400%;
+    animation: moveGradient 10s ease infinite;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

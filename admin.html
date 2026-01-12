@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard - CTMS</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+        body { background: #f4f7f6; }
+        .sidebar { background: #2c3e50; height: 100vh; color: white; padding: 20px; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .stat-number { font-size: 24px; font-weight: bold; color: #2980b9; }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-2 sidebar">
+            <h3>CTMS Admin</h3>
+            <hr>
+            <ul class="nav nav-pills nav-stacked">
+                <li class="active"><a href="#" style="color:white">Dashboard</a></li>
+                <li><a href="#" style="color:white">Manage Buses</a></li>
+                <li><a href="#" style="color:white">Driver Logs</a></li>
+                <li><a href="login.html" style="color:red">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="col-md-10" style="padding:30px;">
+            <h2>Management Overview</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <p>Total Buses</p>
+                        <div class="stat-number">45</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <p>Active Routes</p>
+                        <div class="stat-number">32</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card text-center">
+                        <p>Student Users</p>
+                        <div class="stat-number">1,240</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Recent Alerts</h3>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Bus No</th>
+                            <th>Issue</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>B-101</td><td>Delayed (Traffic)</td><td><span class="label label-warning">In Progress</span></td></tr>
+                        <tr><td>B-205</td><td>Breakdown</td><td><span class="label label-danger">Action Required</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="card">
+    <h3><span class="glyphicon glyphicon-plus"></span> Add New Bus Route</h3>
+    <hr>
+    <form id="addBusForm">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Bus Number</label>
+                    <input type="text" class="form-control" id="newBusNo" placeholder="e.g., B-401" required>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Boarding Point</label>
+                    <input type="text" class="form-control" id="newPoint" placeholder="e.g., Tambaram" required>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Driver Name</label>
+                    <input type="text" class="form-control" id="newDriver" placeholder="Driver Name" required>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Faculty In-Charge</label>
+                    <input type="text" class="form-control" id="newFaculty" placeholder="Faculty Name" required>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Update System Fleet</button>
+    </form>
+</div>
+    <script src="js/jquery-2.2.4.min.js"></script>
+<script>
+    $('#addBusForm').on('submit', function(e) {
+        e.preventDefault();
+        alert("Success! New route added to the College Transport Database.");
+        // In a real system, this would push data to your Excel or SQL database
+        this.reset(); 
+    });
+</script>
+</body>
+</html>
